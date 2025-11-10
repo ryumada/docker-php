@@ -1,0 +1,14 @@
+services:
+  php-app:
+    image: php:5.6.40-fpm-stretch
+    restart: always
+    ports:
+      - "20010:9000"
+    volumes:
+    - ./app:/var/www/html
+
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"

@@ -1,0 +1,14 @@
+services:
+  php-app:
+    image: ${DOCKER_IMAGE}
+    restart: always
+    ports:
+      - "${PORT}:9000"
+    volumes:
+    - ./app:/var/www/html
+
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
