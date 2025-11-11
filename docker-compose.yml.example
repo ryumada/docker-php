@@ -1,6 +1,6 @@
 services:
   php-app:
-    image: ${DOCKER_IMAGE}
+    image: php:${DOCKER_PHP_VERSION}
     restart: always
     ports:
       - "${PORT}:9000"
